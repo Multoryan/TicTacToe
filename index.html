@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Tic Tac Toe</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<h1 id="main">Крестики - нолики</h1>
+
+	<div id="field">
+		<div v-for="(item,index) in field">
+			<div @click="revertValue(index)">
+				<div v-show="item !== 0">
+					{{ item }}
+				</div>
+			</div>
+		</div>
+		<button @click="newGame">Новая игра</button>
+		<span v-show="isEnd">{{ msgEnd }}</span>
+		<span v-show="isWinner" id="winner">{{ congrulMsg }}{{ win }}</span>
+	</div>
+
+</body>
+	<script src="js/vue.js"></script>
+	<script src="js/custom.js"></script>
+</html>
